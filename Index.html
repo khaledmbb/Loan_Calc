@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+
+  <title>Load Calculator</title>
+</head>
+
+<style>
+  body {
+    font-family: 'Syne Mono', monospace;
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    text-align: center;
+    background-color: white;
+    border: 2px solid rgb(15, 15, 15);
+    padding: 30px 50px;
+    font-size: 20px;
+  }
+
+  .card h1 {
+    font-weight: bolder;
+    font-size: 50px;
+  }
+
+  .card ul {
+    list-style: none;
+    margin: 0;
+    font-size: 20px;
+    padding: 0;
+  }
+
+  .card input {
+    font-family: 'Syne Mono', monospace;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    border: 1px solid rgb(15, 15, 15);
+    padding: 10px 20px;
+    font-size: 20px;
+    transition: .3s;
+  }
+
+  .card input:focus {
+    border: 1px solid #e09f1a;
+    outline: none;
+  }
+
+  .card input:hover {
+    border: 1px solid #e09f1a;
+  }
+
+  .card button {
+    font-family: 'Syne Mono', monospace;
+    background: black;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    transition: .3s;
+    font-size: 20px;
+  }
+
+
+  .card button:hover,
+  .card .ul1 li:hover {
+    box-shadow: #e09f1a -6px 6px 0 0px;
+  }
+
+  .card .card2 {
+    padding: 30px 0 0 0;
+    display: none;
+    font-size: 20px;
+  }
+
+  .card .card2.show {
+    display: block;
+  }
+
+  .card .card2 ul li {
+    text-align: start;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border: 1px solid rgb(15, 15, 15);
+  }
+
+  .error {
+    text-align: center;
+    color: red;
+    margin-top: 30px;
+    font-size: 20px;
+  }
+
+  .card .ul1 {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .card .ul1 li {
+    background-color: black;
+    color: white;
+    transition: .3s;
+    width: 100%;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Loan Calculator</h1>
+      <ul>
+        <li><input placeholder="Loan" required type="number" id="loan"></li>
+        <li><input type="number" max="99" required id="interest" placeholder="interest"></li>
+        <li><input type="number" required id="salary" placeholder="Salary"></li>
+        <li><input type="number" required id="months" placeholder="Months"></li>
+      </ul>
+      <button>Calculator</button>
+      <div class="card2">
+        <ul>
+          <li>Monthly Payment : <span class="monthsly_payment"></span></li>
+          <li>Total Payment : <span class="total_payment"></span></li>
+        </ul>
+        <ul class="ul1">
+          <li class="done">Done</li>
+          <li class="reset">Reset</li>
+        </ul>
+      </div>
+    </div>
+    <div class="error">
+      <p></p>
+    </div>
+  </div>
+  <script src="./Main.js"></script>
+</body>
+
+</html>
